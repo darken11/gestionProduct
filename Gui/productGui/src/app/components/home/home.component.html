@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #c2c5c7;">
+    <!-- <ul class="navbar navbar-nav"> </ul>-->
+    <ul class="navbar navbar-nav ml-auto">
+        <li>
+            <form #f="ngForm" class="form-inline" (ngSubmit)="onSearchProduct(f.value)">
+                <div class="form-group">
+                    <input ngModel name="keyword" type="text" class="search border border-light">
+                    <button class="btn btn-outline-dark ms-2 btnSearch" type="submit">
+
+              Search
+            </button>
+                </div>
+            </form>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="card mt-5" *ngIf="product; else noResult ">
+            <div class="card-body " *ngFor=" let prod of product ">
+                <div class="card-header mb-2" style="background-color:#0dcaf0; ">
+                    <h5 class="card-title ">Detail Product</h5>
+                </div>
+                <label for=" " class="identifient ">ID:</label><label>             {{prod.id}}</label><br>
+                <label for=" " class="identifient ">Designation:</label><label>     {{prod.designation}}</label><br>
+                <label for=" " class="identifient ">Price:</label><label>    {{prod.price}} €</label><br>
+                <label for=" " class="identifient ">Quantity:</label><label> {{prod.quantity}}</label><br>
+                <label for=" " class="identifient ">Category:</label><label> {{prod.category.name}}</label><br>
+
+
+            </div>
+        </div>
+        <ng-template #noResult>
+            <div class="alert alert-danger mt-2">
+                <p class="text-center">Ther Is No Data To Show</p>
+            </div>
+
+        </ng-template>
+    </div>
+</div>

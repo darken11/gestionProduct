@@ -1,0 +1,21 @@
+<button class="btn btn-secondary col-md-1 m-1" (click)="onBackToHome()"> Back To Home </button>
+
+<div class="container" *ngIf="categoryFormGroup">
+    <h1 class="text-center m-5">Update Category</h1>
+
+    <form [formGroup]="categoryFormGroup">
+        <div class="form-group m-2">
+            <div hidden="true" class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" formControlName="id" />
+            </div>
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name">
+
+        </div>
+
+
+        <button class="btn btn-success col-md-6 offset-md-3" (click)="onEditCategory()">Save</button>
+
+    </form>
+</div>

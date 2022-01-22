@@ -1,0 +1,63 @@
+<button class="btn btn-secondary col-md-2 m-1" (click)="onBackToHome()"> Back To Home </button>
+
+<div class="container" *ngIf="productFormGroup">
+    <h1 class="text-center m-5">Create New Product</h1>
+
+    <form [formGroup]="productFormGroup">
+        <div class="form-group m-2">
+
+            <label>Name</label>
+            <input type="text" class="form-control mt-2" formControlName="designation">
+            <!-- <div *ngIf="submitted && productFormGroup.controls.name.errors" class="invalid-feedback">
+[ngClass]="{'is-invalid':submitted && productFormGroup.controls.name.errors}"
+               <div *ngIf="productFormGroup.controls.name.errors.required">Name is Required</div>
+               </div> -->
+
+
+        </div>
+        <div class="form-group m-2">
+            <label>Price</label>
+            <input type="text" class="form-control mt-2" formControlName="price" />
+
+        </div>
+        <div class="form-group m-2">
+            <label>Qauntity</label>
+            <input type="text" class="form-control mt-2" formControlName="quantity" />
+
+        </div>
+        <div class="form-group m-2">
+            <label>Category</label>
+
+            <select class="form-select mt-2" formControlName="category" aria-label="Default select example">
+              <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+              </select>
+        </div>
+        <!-- <div class="form-group">
+            <label>Select</label>
+            <input type="checkbox" formControlName="selected" class="form-check" />
+
+        </div> -->
+        <!-- <div class="form-group">
+            <label>Select</label>
+            <input type="checkbox" formControlName="available" class="form-check" />
+
+        </div> -->
+        <button class="btn btn-success col-md-6 offset-md-2" (click)="onAddProduct()">Save</button>
+
+    </form>
+</div>
+
+<div class="card m-5" style="width: 20rem; " *ngIf="product">
+    <div class="card-body">
+        <div class="card-header" style="background-color:#0dcaf0; ">
+            <h5 class="card-title">Detail Product</h5>
+        </div>
+        <label for="" class="identifient">ID:</label><label>       {{product.id}}</label><br>
+        <label for="" class="identifient">Name:</label><label>     {{product.designation}}</label><br>
+        <label for="" class="identifient">Price:</label><label>    {{product.price}} €</label><br>
+        <label for="" class="identifient">Quantity:</label><label> {{product.quantity}}</label><br>
+        <label for="" class="identifient">Category:</label><label> {{product.category.name}}</label><br>
+
+
+    </div>
+</div>

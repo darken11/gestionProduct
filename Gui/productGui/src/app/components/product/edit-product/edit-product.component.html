@@ -1,0 +1,41 @@
+<button class="btn btn-secondary col-md-1 m-1" (click)="onBackToHome()"> Back To Home </button>
+
+<div class="container" *ngIf="productFormGroup">
+    <h1 class="text-center m-5">Update Product</h1>
+
+    <form [formGroup]="productFormGroup">
+        <div class="form-group m-2">
+            <div hidden="true" class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" formControlName="id" />
+
+            </div>
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="designation">
+            <!-- <div *ngIf="submitted && productFormGroup.controls.name.errors" class="invalid-feedback">
+[ngClass]="{'is-invalid':submitted && productFormGroup.controls.name.errors}"
+               <div *ngIf="productFormGroup.controls.name.errors.required">Name is Required</div>
+               </div> -->
+
+
+        </div>
+        <div class="form-group m-2">
+            <label>Price</label>
+            <input type="text" class="form-control" formControlName="price" />
+
+        </div>
+        <div class="form-group m-2">
+            <label>Qauntity</label>
+            <input type="text" class="form-control" formControlName="quantity" />
+
+        </div>
+        <div class="form-group m-2">
+            <label>Category</label>
+            <input type="text" class="form-control" formControlName="category" />
+
+        </div>
+
+        <button class="btn btn-success col-md-6 offset-md-3" (click)="onEditProduct()">Save</button>
+
+    </form>
+</div>

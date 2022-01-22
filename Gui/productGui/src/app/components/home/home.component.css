@@ -1,0 +1,26 @@
+.search {
+    outline: none;
+    height: 40px;
+    width: 300px;
+    margin-left: 50px !important;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.btnSearch {
+    position: relative;
+    top: -2px;
+    width: 200px;
+    height: 40px;
+}
+
+.identifient {
+    color: seagreen;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 2px;
+    letter-spacing: 1.3px;
+}
